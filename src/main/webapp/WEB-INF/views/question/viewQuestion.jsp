@@ -30,9 +30,9 @@
 				</div>
 			</div>
 	</div>
-    <script src="/Farmers-Buddy/resources/js/util.js"></script>
-    <script src="/Farmers-Buddy/resources/js/autumn.js"></script> 
-    <script src="/Farmers-Buddy/resources/lib/axios.js"></script>
-    <script src="/Farmers-Buddy/resources/lib/sweetalert2.js"></script> 
+    <script src="../../resources/js/util.js"></script>
+    <script src="../../resources/js/autumn.js"></script> 
+    <script src="../../resources/lib/axios.js"></script>
+    <script src="../../resources/lib/sweetalert2.js"></script> 
 </body>
 </html>

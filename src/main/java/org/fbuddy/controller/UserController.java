@@ -39,9 +39,9 @@ public class UserController {
 			if(user!=null) {
 				HttpSession session = req.getSession(true);
 				session.setAttribute("username", user.getUserName());
-				res.sendRedirect("/Farmers-Buddy");
+				res.sendRedirect("/");
 			}else {
-				res.sendRedirect("/Farmers-Buddy/users/login");
+				res.sendRedirect("/users/login");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -60,7 +60,7 @@ public class UserController {
 		
 		try {
 			service.save(user);
-			//res.sendRedirect("/Farmers-Buddy");
+			//res.sendRedirect("/");
 			model.addAttribute("user",user);
 			return "user/login";
 			

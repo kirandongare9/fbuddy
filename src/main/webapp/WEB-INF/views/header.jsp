@@ -1,5 +1,5 @@
 <div id="login-top-back">
-    <img src="/Farmers-Buddy/resources/img/proimage2.jpg">
+    <img src="/resources/img/proimage2.jpg">
 </div>
 
 <div class="header" >
@@ -9,7 +9,7 @@
     <div class="options right">
         <button class="green filled" nav="/users/signup">Register</button>
 		<% if( session != null && session.getAttribute("username") != null ) { %>
-			<button class="blue" nav="/Farmers-Buddy/logout"> Logout</button>
+			<button class="blue" nav="/logout"> Logout</button>
 		<% } else { %>
 			<button class="saffron" nav="/users/login">Login</button>        
 		<% } %>

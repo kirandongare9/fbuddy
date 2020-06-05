@@ -48,7 +48,7 @@ public class AnswersController {
 		service.insert(answer);
 		
 		try {
-			res.sendRedirect("/Farmers-Buddy/questions/view/"+answer.getQuestionId());
+			res.sendRedirect("/questions/view/"+answer.getQuestionId());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
