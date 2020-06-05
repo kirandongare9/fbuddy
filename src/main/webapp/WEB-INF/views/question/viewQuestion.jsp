@@ -19,7 +19,7 @@
 			<div class="card fill-screen">
 				<div class="card-subject" style="padding-left:2%;">${question.getQuestion() }</div>
 				<div class="card-body">
-					<button class="button" nav="/Farmers-Buddy/answers/give/${question.getQuestionId() }" style="margin-top:0%;" >Give Answer</button>
+					<button class="button" nav="/answers/give/${question.getQuestionId() }" style="margin-top:0%;" >Give Answer</button>
 					<div class="cards-list">
 						<c:forEach items="${question.getAnswers()}"	var="answer">
 							<div class="card" >

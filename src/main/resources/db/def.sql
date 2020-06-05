@@ -1,4 +1,4 @@
---create database farmer-buddy;
+--create database farmer_buddy;
 user farmer-buddy;
 
 --create user 'touch'@'localhost' identified by 'touch';

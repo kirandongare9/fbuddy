@@ -45,13 +45,13 @@
                     	<div class="element inline">
                     	<div class="control">
            					<div class="filled-outlined-btn" 
-           					nav="/Farmers-Buddy/users/signup" style="width:90%">Join Farmers Buddy</div>
+           					nav="/users/signup" style="width:90%">Join Farmers Buddy</div>
        					</div>
        					</div>
        					<div class="element inline">
        						<div class="control">
             					<div class="filled-outlined-btn" 
-            					nav="/Farmers-Buddy/officers/signup" style="width:90%">Agricultural Officer Registration</div>
+            					nav="/officers/signup" style="width:90%">Agricultural Officer Registration</div>
         					</div>
        					</div>
                     </div>
@@ -64,7 +64,7 @@
                     </div>
                     
                         <div class="control">
-                            <label class="link" nav='/Farmers-Buddy/officers/signup' > Forgot Password?</label>
+                            <label class="link" nav='/officers/signup' > Forgot Password?</label>
                         </div>
                 </div>
             </div> 

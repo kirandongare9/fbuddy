@@ -3,15 +3,15 @@
 </div>
 
 <div class="header" >
-    <div id="title" nav="/Farmers-Buddy">
+    <div id="title" nav="/">
         <label class="title"> <span>F</span>armers<span>&nbsp;B</span>uddy </label>    
     </div>
     <div class="options right">
-        <button class="green filled" nav="/Farmers-Buddy/users/signup">Register</button>
+        <button class="green filled" nav="/users/signup">Register</button>
 		<% if( session != null && session.getAttribute("username") != null ) { %>
 			<button class="blue" nav="/Farmers-Buddy/logout"> Logout</button>
 		<% } else { %>
-			<button class="saffron" nav="/Farmers-Buddy/users/login">Login</button>        
+			<button class="saffron" nav="/users/login">Login</button>        
 		<% } %>
     </div>
 </div>

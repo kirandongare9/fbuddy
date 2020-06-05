@@ -22,7 +22,7 @@
 		<div>
 			<input type="text" class="input" style="width:60% ;margin:2%" onChange="filterQuestions(event);"/>
             <button id="" class="button" > Search Question </button>
-            <button id="" class="button warning" nav="/Farmers-Buddy/questions/post"> Ask a question  </button>
+            <button id="" class="button warning" nav="/questions/post"> Ask a question  </button>
         </div>
         
 			<div class="cards-list">
