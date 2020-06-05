@@ -36,7 +36,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 	    	  if(session!=null && session.getAttribute("username")!=null)
 	    		  return true;
 	    	  else {
-	    		  response.sendRedirect("/Farmers-Buddy/users/login");   
+	    		  response.sendRedirect("/users/login");   
 	    		  return false;
 	    	  }
 	      
