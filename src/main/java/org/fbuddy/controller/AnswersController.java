@@ -2,8 +2,6 @@ package org.fbuddy.controller;
 
 import java.io.IOException;
 
-import java.net.http.HttpResponse;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
