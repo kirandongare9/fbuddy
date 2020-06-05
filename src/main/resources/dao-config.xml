@@ -19,11 +19,19 @@
      <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
     <!-- This bean will hold references to our database -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/farmer_buddy" />
         <property name="username" value="touch" />
         <property name="password" value="touch" />
+    </bean> -->
+
+	<!--  Clever cloud db -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://unjoypna70nixdyx:eQyPatWLVB4eYog6AGY4@bkgzkrnhbjjchsmpcwvc-mysql.services.clever-cloud.com:3306/bkgzkrnhbjjchsmpcwvc" />
+        <property name="username" value="unjoypna70nixdyx" />
+        <property name="password" value="eQyPatWLVB4eYog6AGY4" />
     </bean>
 
     <!-- Spring way of entity manager factory configuration -->
