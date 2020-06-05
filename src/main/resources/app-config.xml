@@ -24,7 +24,7 @@ class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 </bean>
 
 <mvc:interceptors>
-    <bean id="loggerInterceptor" class="com.fbuddy.util.LoginInterceptor"/>
+    <bean id="loggerInterceptor" class="org.fbuddy.util.LoginInterceptor"/>
 </mvc:interceptors>
 
 <mvc:cors>
