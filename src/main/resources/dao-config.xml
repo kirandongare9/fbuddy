@@ -52,9 +52,8 @@
 	
 	
     <!-- Spring way of entity manager factory configuration -->
-
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-          <property name="dataSource" ref="onlinePostgre"/>
+          <property name="dataSource" ref="localPostgre"/>
           <property name="packagesToScan" value="com.fbuddy.*"/>
           <property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
           <property name="jpaPropertyMap">
@@ -67,7 +66,7 @@
       </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="onlinePostgre"></property>
+		<property name="dataSource" ref="localPostgre"></property>
 	</bean>
 
     <!-- This bean will handle all transaction within an application -->
