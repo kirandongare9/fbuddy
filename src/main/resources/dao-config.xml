@@ -19,20 +19,20 @@
      <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
     <!-- Local Mysql -->
-    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="localMySql" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/farmer_buddy" />
         <property name="username" value="touch" />
         <property name="password" value="touch" />
-    </bean> -->
+    </bean>
     
 	<!-- Local Postgre db -->
-    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="localPostgre" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql://localhost:5432/farmers_buddy" />
         <property name="username" value="postgres" />
         <property name="password" value="kdenter09" />
-    </bean>  -->
+    </bean>
 
 	<!--  Clever cloud Mysql db -->
 	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -43,7 +43,7 @@
     </bean> -->
 	
 	<!-- ElephantSql Postgres db -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="onlinePostgre" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql://ruby.db.elephantsql.com:5432/evxrtltv" />
         <property name="username" value="evxrtltv" />
@@ -54,7 +54,7 @@
     <!-- Spring way of entity manager factory configuration -->
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-          <property name="dataSource" ref="dataSource"/>
+          <property name="dataSource" ref="onlinePostgre"/>
           <property name="packagesToScan" value="com.fbuddy.*"/>
           <property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
           <property name="jpaPropertyMap">
@@ -67,7 +67,7 @@
       </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="dataSource" ref="onlinePostgre"></property>
 	</bean>
 
     <!-- This bean will handle all transaction within an application -->

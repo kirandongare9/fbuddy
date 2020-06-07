@@ -18,7 +18,7 @@ public class QuestionDaoImpl implements QuestionDao{
 	JdbcTemplate jt;
 	
 	public void insert(Question question) {
-		String sql = "insert into questions(question,created_date,created_by) values(?,curdate(),?)";
+		String sql = "insert into questions(question,created_date,created_by) values(?,now(),?)";
 		jt.update(sql,question.getQuestion(),question.getCreatedBy());
 	}
 

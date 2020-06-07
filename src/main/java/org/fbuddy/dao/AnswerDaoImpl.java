@@ -17,7 +17,7 @@ public class AnswerDaoImpl implements AnswerDao{
 	JdbcTemplate jt;
 	
 	public void insert(Answer answer) {
-		String sql = "insert into answers(answer,question_id,created_date,created_by) values(?,?,curdate(),?)";
+		String sql = "insert into answers(answer,question_id,created_date,created_by) values(?,?,now(),?)";
 		jt.update(sql,answer.getAnswer(),answer.getQuestionId(),answer.getCreatedBy());
 	}
 
