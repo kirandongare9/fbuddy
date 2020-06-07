@@ -27,12 +27,12 @@
 				<div class="card user">
 					<label> ${user.getName() } ( ${ user.getUserName()} ) &lt; ${ user.getEmail() } &gt; </label>
 					<div class="card-options">
-						 <button id="" class="button danger no-top-up-margin" nav="/Farmers-Buddy/admin/delete/${user.getId() }"> Delete </button>
+						 <button id="" class="button danger no-top-up-margin" nav="/admin/delete/${user.getId() }"> Delete </button>
 						  <c:if test="${user.getRole() != 'admin' }">
-						  	<button id="" class="button success no-top-up-margin" nav="/Farmers-Buddy/admin/give/${user.getId()}"> Give Admin Access </button>
+						  	<button id="" class="button success no-top-up-margin" nav="/admin/give/${user.getId()}"> Give Admin Access </button>
 						  </c:if>
 						  <c:if test="${user.getRole() == 'admin' }">
-						  	<button id="" class="button warning" nav="/Farmers-Buddy/admin/revoke/${user.getId()}"> Revoke Admin Access </button>
+						  	<button id="" class="button warning" nav="/admin/revoke/${user.getId()}"> Revoke Admin Access </button>
 						  </c:if>
 					</div>
 				</div>

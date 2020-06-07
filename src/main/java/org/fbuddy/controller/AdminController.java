@@ -39,7 +39,7 @@ public class AdminController {
 	@GetMapping(value="/delete/{userId}")
 	public void deleteUser(@PathVariable("userId") int userId, HttpServletResponse res , Model model) {
 		service.delete(userId);
-		utils.redirect("/Farmers-Buddy/admin/", res);
+		utils.redirect("/admin/", res);
 	}
 	
 	@GetMapping(value="/give/{userId}")
@@ -47,7 +47,7 @@ public class AdminController {
 		User user = service.get(userId);
 		user.setRole("admin");
 		service.update(user);
-		utils.redirect("/Farmers-Buddy/admin/", res);
+		utils.redirect("/admin/", res);
 	}
 	
 	@GetMapping(value="/revoke/{userId}")
@@ -55,7 +55,7 @@ public class AdminController {
 		User user = service.get(userId);
 		user.setRole("");
 		service.update(user);
-		utils.redirect("/Farmers-Buddy/admin/", res);
+		utils.redirect("/admin/", res);
 	}
 	
 }

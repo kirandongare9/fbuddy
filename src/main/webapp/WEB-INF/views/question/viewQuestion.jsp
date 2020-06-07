@@ -21,7 +21,7 @@
 			<div class="card fill-screen">
 				<div class="card-subject" style="padding-left:2%;">${question.getQuestion() }</div>
 				<div class="card-body">
-					<button class="button" nav="/Farmers-Buddy/answers/give/${question.getQuestionId() }" style="margin-top:0%;" >Give Answer</button>
+					<button class="button" nav="/answers/give/${question.getQuestionId() }" style="margin-top:0%;" >Give Answer</button>
 					<div class="cards-list">
 						<c:forEach items="${question.getAnswers()}"	var="answer">
 							<div class="card" >
@@ -33,12 +33,12 @@
 								</div>
 								<label> <c:out value="${answer.getAnswer()  }" /> </label>
 								<div class="card-options">
-									<span class="icon small like" nav="/Farmers-Buddy/answers/like/${answer.getAnswerId()}"></span><span class="like-count">${ answer.getLikes()}</span>
+									<span class="icon small like" nav="/answers/like/${answer.getAnswerId()}"></span><span class="like-count">${ answer.getLikes()}</span>
 									<c:if test="${ username == answer.getCreatedBy() || role == 'officer' || role == 'admin' }">
-										<button id="" class="button success" nav="/Farmers-Buddy/answers/edit/${answer.getAnswerId()}"> Edit </button>
+										<button id="" class="button success" nav="/answers/edit/${answer.getAnswerId()}"> Edit </button>
 									</c:if>
 									<c:if test="${ username == answer.getCreatedBy() || role == 'officer' || role == 'admin' }">
-										<button id="" class="button danger" nav="/Farmers-Buddy/answers/delete/${answer.getAnswerId()}"> Delete </button>
+										<button id="" class="button danger" nav="/answers/delete/${answer.getAnswerId()}"> Delete </button>
 									</c:if>
 								</div>
 								

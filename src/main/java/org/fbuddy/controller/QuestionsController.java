@@ -79,7 +79,7 @@ public class QuestionsController {
 		});
 		
 		try {
-			res.sendRedirect("/Farmers-Buddy/questions/");
+			res.sendRedirect("/questions/");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

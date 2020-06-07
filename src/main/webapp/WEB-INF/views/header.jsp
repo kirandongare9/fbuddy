@@ -1,5 +1,7 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <div id="login-top-back">
-    <img src="/resources/img/back09.jpg">
+    <img src="/resources/img/back1.jpg">
 </div>
 
 <div class="header" >
@@ -15,7 +17,7 @@
         </c:if>
         
 		<% if( session != null && session.getAttribute("username") != null ) { %>
-			<button class="blue" nav="/logout"> Logout</button>
+			<button class="white" nav="/logout"> Logout</button>
 		<% } else { %>
 			<button class="saffron" nav="/users/login">Login</button>        
 		<% } %>

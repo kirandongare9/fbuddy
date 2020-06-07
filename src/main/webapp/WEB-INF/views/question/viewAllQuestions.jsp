@@ -22,7 +22,7 @@
 		<div>
 			<input type="text" class="input" style="width:60% ;margin:2%" onkeyup="filterQuestions(event);"/>
             <button id="" class="button" > Search Question </button>
-            <button id="" class="button warning" nav="/Farmers-Buddy/questions/post"> Ask a question  </button>
+            <button id="" class="button warning" nav="/questions/post"> Ask a question  </button>
         </div>
         
 			<div class="cards-list" id="questions-list">
@@ -30,14 +30,14 @@
 				<div class="card question">
 					<label nav="view/${question.getQuestionId()}"> <c:out value="${question.getQuestion() }" /> </label>
 					<div class="card-options">
-						<span class="icon small like"nav="/Farmers-Buddy/questions/like/${question.getQuestionId()}"></span><span class="like-count">${question.getLikes()} </span>
+						<span class="icon small like"nav="/questions/like/${question.getQuestionId()}"></span><span class="like-count">${question.getLikes()} </span>
 						<button id="" class="button no-top-up-margin" nav="view/${question.getQuestionId()}"> View Answers </button>
 						
 						<c:if test="${ username == question.getCreatedBy() || role == 'officer' || role == 'admin'}">
-							<button id="" class="button success no-top-up-margin" nav="/Farmers-Buddy/questions/edit/${question.getQuestionId()}"> Edit </button>
+							<button id="" class="button success no-top-up-margin" nav="/questions/edit/${question.getQuestionId()}"> Edit </button>
 						</c:if>
 						<c:if test="${ username == question.getCreatedBy() || role == 'officer' || role == 'admin' }">
-							<button id="" class="button danger no-top-up-margin" nav="/Farmers-Buddy/questions/delete/${question.getQuestionId()}"> Delete </button>
+							<button id="" class="button danger no-top-up-margin" nav="/questions/delete/${question.getQuestionId()}"> Delete </button>
 						</c:if>
 					</div>
 				</div>
