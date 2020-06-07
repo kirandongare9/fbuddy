@@ -1,5 +1,5 @@
 <div id="login-top-back">
-    <img src="/resources/img/proimage2.jpg">
+    <img src="/resources/img/back09.jpg">
 </div>
 
 <div class="header" >
@@ -7,7 +7,13 @@
         <label class="title"> <span>F</span>armers<span>&nbsp;B</span>uddy </label>    
     </div>
     <div class="options right">
-        <button class="green filled" nav="/users/signup">Register</button>
+        <c:if test="${role == 'admin' }">
+        	<button class="green filled" nav="/admin/">Admin options</button>
+        </c:if>
+        <c:if test="${ role == null }">
+        	<button class="green filled" nav="/users/signup">Register</button>
+        </c:if>
+        
 		<% if( session != null && session.getAttribute("username") != null ) { %>
 			<button class="blue" nav="/logout"> Logout</button>
 		<% } else { %>

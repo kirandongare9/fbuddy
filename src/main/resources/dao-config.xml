@@ -18,22 +18,39 @@
 
      <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
-    <!-- This bean will hold references to our database -->
+    <!-- Local Mysql -->
     <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/farmer_buddy" />
         <property name="username" value="touch" />
         <property name="password" value="touch" />
     </bean> -->
+    
+	<!-- Local Postgre db -->
+    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/farmer_buddy" />
+        <property name="username" value="postgres" />
+        <property name="password" value="kdenter09" />
+    </bean>  -->
 
-	<!--  Clever cloud db -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<!--  Clever cloud Mysql db -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://unjoypna70nixdyx:eQyPatWLVB4eYog6AGY4@bkgzkrnhbjjchsmpcwvc-mysql.services.clever-cloud.com:3306/bkgzkrnhbjjchsmpcwvc" />
         <property name="username" value="unjoypna70nixdyx" />
         <property name="password" value="eQyPatWLVB4eYog6AGY4" />
+    </bean> -->
+	
+	<!-- ElephantSql Postgres db -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://ruby.db.elephantsql.com:5432/evxrtltv" />
+        <property name="username" value="evxrtltv" />
+        <property name="password" value="grAvlRcEcjth3TwvxRTSgZa68Cc53TQM" />
     </bean>
-
+	
+	
     <!-- Spring way of entity manager factory configuration -->
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -42,7 +59,8 @@
           <property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
           <property name="jpaPropertyMap">
               <map>
-                  <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+                  <!-- <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/> -->
+                  <entry key="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
                   <entry key="hibernate.hbm2ddl.auto" value="update"/>
               </map>
           </property>

@@ -2,8 +2,6 @@ package org.fbuddy.dto;
 
 import java.util.List;
 
-
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +13,9 @@ public class Answer {
 	private String createdBy;
 	private String createdDate;
 	private List<AnswerAttribute> attributes;
+	
+	private int likes;
+	private String createdByRole;
 	
 	public int getAnswerId() {
 		return answerId;
@@ -51,6 +52,18 @@ public class Answer {
 	}
 	public void setAttributes(List<AnswerAttribute> attributes) {
 		this.attributes = attributes;
+	}
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+	public String getCreatedByRole() {
+		return createdByRole;
+	}
+	public void setCreatedByRole(String createdByRole) {
+		this.createdByRole = createdByRole;
 	}
 	
 	

@@ -23,13 +23,13 @@ public class QuestionDaoImpl implements QuestionDao{
 	}
 
 	public void update(Question question) {
-		// TODO Auto-generated method stub
-		
+		String sql = "update questions set question = ? where question_id = ?";
+		jt.update(sql,question.getQuestion() , question.getQuestionId());
 	}
 
 	public void delete(Question question) {
-		// TODO Auto-generated method stub
-		
+		String sql = "delete from questions where question_id = ?";
+		jt.update(sql,question.getQuestionId());
 	}
 
 	public Question get(int questionId) {
@@ -43,7 +43,8 @@ public class QuestionDaoImpl implements QuestionDao{
 			question.setCreatedBy(row1.get("created_by").toString());
 			question.setCreatedDate(row1.get("created_date").toString());
 			question.setQuestion(row1.get("question").toString());
-		
+			question.setLikes(Integer.parseInt(row1.get("likes").toString()));
+			
 		return question;
 	}
 
@@ -59,6 +60,8 @@ public class QuestionDaoImpl implements QuestionDao{
 			question.setCreatedBy(row.get("created_by").toString());
 			question.setCreatedDate(row.get("created_date").toString());
 			question.setQuestion(row.get("question").toString());
+			question.setLikes(Integer.parseInt(row.get("likes").toString()));
+			
 			questions.add(question);
 		});
 		
@@ -66,23 +69,30 @@ public class QuestionDaoImpl implements QuestionDao{
 	}
 
 	public List<Answer> getAnswers(int questionId) {
-		String sql = "select * from answers where question_id = ? ";
+		String sql = "select ans.*,usr.role created_by_role from answers ans inner join users usr on usr.username = ans.created_by where ans.question_id = ?";
 		List<Map<String, Object>> result = jt.queryForList(sql,questionId);
 		List<Answer> answers = new ArrayList<Answer>();
 		
 		result.forEach(row -> {
 			
 			Answer answer = new Answer();
-			answer.setQuestionId(Integer.parseInt(row.get("answer_id")+""));
+			answer.setAnswerId(Integer.parseInt(row.get("answer_id")+""));
 			answer.setQuestionId(Integer.parseInt(row.get("question_id")+""));
 			answer.setCreatedBy(row.get("created_by")+"");
 			answer.setCreatedDate(row.get("created_date")+"");
 			answer.setAnswer(row.get("answer")+"");
-			
+			answer.setLikes(Integer.parseInt(row.get("likes").toString()));
+			answer.setCreatedByRole(row.get("created_by_role")+"");
 			answers.add(answer);
 		});
 		
 		return answers;
+	}
+
+	@Override
+	public void like(int questionId) {
+		String sql = "update questions set likes = likes+1 where question_id = ?";
+		jt.update(sql,questionId);
 	}
 
 }

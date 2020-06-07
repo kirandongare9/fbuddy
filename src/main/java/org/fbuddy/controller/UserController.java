@@ -12,11 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.fbuddy.dto.User;
 import org.fbuddy.service.UserService;
+import org.fbuddy.dto.User;
 
 @Controller
 @RequestMapping(value="users")
@@ -39,6 +41,7 @@ public class UserController {
 			if(user!=null) {
 				HttpSession session = req.getSession(true);
 				session.setAttribute("username", user.getUserName());
+				session.setAttribute("role", user.getRole());
 				res.sendRedirect("/");
 			}else {
 				res.sendRedirect("/users/login");
